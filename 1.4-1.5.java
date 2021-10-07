@@ -161,3 +161,147 @@ public class Main {
 
     }
 }
+//Точка-1; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (x*x+y*y>=4 && y<=x && x<=2 && y>0)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-2; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (y<=Math.sin(x) && y<=0.5 && x<=Math.PI && x>=0 && y>=0)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-3; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (y<=2-x*x && y>=x || y<=x && x>0 && y>0 && y<=2-x*x)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-4; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (y>=x*x-2 && x>=y || -x>=y && y>=x*x-2)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+// Точка-5; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (x*x+y*y<=1 && y>=x || x*x+y*y<=1 && x<=0)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-6; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (x*x+y*y<=1 && y>=-x || x*x+y*y<=1 && y<=x)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-7; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (y>=1-x && x<=1 && y<=2*x*x && x>0 || y>=1-x && y>=2*x*x && x<=1)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-8; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (x*x+y*y<=1 && x>=0 || y<=1 && y>=x-1 && x>=0)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+//Точка-9; Напишите программу, которая определяет, попала ли точка с заданными координатами в заштрихованную область, изображенную на рисунке ниже.
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        float x=in.nextFloat();
+        float y=in.nextFloat();
+        if (x*x+y*y<=1 || y<=1 && y>=0 && x>=0 && x<=1)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
