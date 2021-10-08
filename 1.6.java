@@ -164,6 +164,44 @@ public class Main
 //Новый год
 //Напишите программу, которая вводит с клавиатуры номер месяца и день, и определяет, сколько дней осталось до Нового года. При вводе неверных данных должно быть выведено сообщение об ошибке. Считается, что год невисокосный.
 
+import java.util.Scanner;
+
+public class Main
+{
+        public static void main (String[]args)
+    {
+        Scanner in = new Scanner (System.in);
+        int x = in.nextInt ();
+        int y = in.nextInt();
+        if ((x<0) | (x==0) | (x>12)){ System.out.print(-1);}
+
+if ((x==1) && (y>31) && (y>=0)) {System.out.print(-1);}
+if ((x==2) && (y>28) && (y>=0)) {System.out.print(-1);}
+if ((x==3) && (y>31) && (y>=0)) {System.out.print(-1);}
+if ((x==4) && (y>30) && (y>=0)) {System.out.print(-1);}
+if ((x==5) && (y>31) && (y>=0)) {System.out.print(-1);}
+if ((x==6) && (y>30) && (y>=0)) {System.out.print(-1);}
+if ((x==7) && (y>31) && (y>=0)) {System.out.print(-1);}
+if ((x==8) && (y>31) && (y>=0)) {System.out.print(-1);}
+if ((x==9) && (y>30) && (y>=0)) {System.out.print(-1);}
+if ((x==10) && (y>31) && (y>=0)) {System.out.print(-1);}
+if ((x==11) && (y>30) && (y>=0)) {System.out.print(-1);}
+if ((x==12) && (y>31) && (y>=0)) {System.out.print(-1);}
+        if ((x==1) && (y<=31)){System.out.print(365-y);}
+        if ((x==2) && (y<=28)){System.out.print(365-31-y);}
+        if ((x==3) && (y<=31)){ System.out.print(365-28-31-y);}
+        if ((x==4) && (y<=30)){ System.out.print(365-31-31-28-y);}
+        if ((x==5) && (y<=31)){ System.out.print(365-30-31-31-28-y);}
+        if ((x==6) && (y<=30)){System.out.print(365-31-30-31-31-28-y);}
+        if ((x==7) && (y<=31)){System.out.print(365-30-31-30-31-31-28-y);}
+        if ((x==8) && (y<=31)){System.out.print(365-31-30-31-30-31-31-28-y);}
+        if ((x==9) && (y<=30)){ System.out.print(365-31-31-30-31-30-31-31-28-y);}
+        if ((x==10) && (y<=31)){ System.out.print(365-30-31-31-30-31-30-31-31-28-y);}
+        if ((x==11) && (y<=30)){ System.out.print(365-31-30-31-31-30-31-30-31-31-28-y);}
+        if ((x==12) && (y<=31)){ System.out.print(365-30-31-30-31-31-30-31-30-31-31-28-y);}
+
+    }
+}
 
 //Римская система счисления
 //Дано целое неотрицательное число X. Требуется перевести это число в римскую систему счисления.
