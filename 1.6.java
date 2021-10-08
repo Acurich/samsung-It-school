@@ -210,30 +210,45 @@ import java.util.Scanner;
 
 public class Main
 {
+        public static void main (String[]args)
+    {
+        Scanner in = new Scanner (System.in);
+        int a = in.nextInt ();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        int max, min;
+        float mid;
 
-  public static void main (String[]args)
-  {
-    Scanner in = new Scanner (System.in);
-    int a = in.nextInt ();
-    int b = in.nextInt ();
-    int c = in.nextInt ();
-    int max = 0;
-    if (a > b)
-      {
-	max = a;
-      }
-	else
-      if (b > a && b > max)
-	{
-	  max = b;
-	}
-      else if (c > max)
-	{
-	  max = c;
-	}
-	System.out.print (max);
-      }
-  }//(проходит не все тесты, но все равно засчитывает 0.71 балл из 1)
+        if (a > b && a > c)
+        {
+            max = a;
+            min = (b < c) ? b : c;
+        }
+        else if (b > a && b > c)
+        {
+            max = b;
+            min = (a < c) ? a : c;
+        }
+        else if ( a == b && b >c) {
+            max = a;
+        }
+        else if (b == c && c > a) {
+            max = b;
+        }
+        else if (a == c && b  < c){
+            max = a;
+        }
+        else
+        {
+            max = c;
+            min = (b < a) ? b : a;
+        }
+        
+
+        mid = (a + b + c) / 3f;
+        System.out.print(max);
+    }
+}
 //Упорядочить три числа
 //Дано три числа, записанный в отдельных строках. Упорядочите их в порядке неубывания. Программа должна считывать три числа a, b, c, затем программа должна менять их значения так, чтобы стали выполнены условия a <= b <= c, затем программа выводит тройку a, b, c.
 import java.util.Scanner;
