@@ -166,7 +166,37 @@ public class Main
 //Наименьшая цифра
 //Дано целое положительное число N.
 //Определите минимальную отличную от нуля цифру в десятичном представлении числа N.
+import java.util.Arrays;
+import java.util.Scanner;
 
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int sum = 0;
+        int A = a;
+        while (A!=0){
+            A/=10;
+            sum++;
+        }
+        int k = 1;
+        int [] b = new int[sum];
+        for(int i = 0; i<sum; i++){
+            b[i] = (a/k)%10;
+            k*=10;
+        }
+
+        Arrays.sort(b);
+        int answer =0;
+        for(int i = 0; i<sum; i++) {
+            if (b[i] != 0) {
+                System.out.println(b[i]);
+                break;
+            }
+        }
+    }
+}
 
 //Простое рядом
 //Дано целое положительное число N.
