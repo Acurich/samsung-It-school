@@ -53,9 +53,29 @@ public class Tema_1_5_6 {
 //Среднее нечётных
 //Дана последовательность целых чисел из N элементов.
 //Найдите среднее арифметическое элементов последовательности, имеющих нечетное значение.
-
-
-
+import java.util.Scanner;
+public class Tema_1_2_1 {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int A = in.nextInt();
+        int [] B = new int[A];
+        for(int i = 0; i<A; i++){
+            B[i] = in.nextInt();
+        }
+        boolean C = true;
+        int h = 0;
+        int k=0;
+        for(int i = 0; i<A; i++){
+            if(B[i]%2 != 0){
+                h+=B[i];
+                k++;
+                C = false;
+            }
+        }
+        if(C == true){System.out.println("NO");}
+        else{System.out.printf("%.2f", h/(k*1.0));}
+    }
+}
 
 //В этой задаче не нужно вводить с клавиатуры значения элементов массива.
 //Нужно заполнить значения элементов массива числами последовательности:
