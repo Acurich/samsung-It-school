@@ -6,25 +6,126 @@
 
 //Изменить регистр символа
 //Дан символ C из таблицы кодировки ASCII. Измените регистр символа, если он был латинской буквой: сделайте его заглавным, если он был строчной буквой и наоборот. Для этого напишите отдельную функцию, меняющую регистр символа.
-
-
+import java.util.*;
+public class Main
+{ 
+    public static void main(String[] args)
+    { 
+        Scanner in = new Scanner(System.in);
+		String str = in.nextLine();
+		char[] s = str.toCharArray();
+        String t = "";
+        for (int x = 0; x < str.length(); x++)
+        {  
+            char c = str.charAt(x);
+            boolean check = Character.isUpperCase(c);
+            if (check == true)
+                t = t + Character.toLowerCase(c);
+            else
+                t = t + Character.toUpperCase(c);
+        }
+        System.out.println (t);
+    }
+}
 
 //Количество слов
 //Дана строка s, содержащая буквы латинского алфавита в верхнем и нижнем регистре, а также пробелы. Найдите, количество слов в строке s. Словом считается последовательность непробельных символов.
-
+import java.util.Scanner;
+ 
+public class Main {
+ 
+        public static void main(String[] args) {
+ 
+            Scanner sc = new Scanner(System.in);
+            String input = sc.nextLine();
+            int count = 0;
+            if(input.length() != 0){
+                count++;
+                for (int i = 0; i < input.length(); i++) {
+                    if(input.charAt(i) == ' '){
+                        count++;
+                    }
+                }
+            }
+ 
+            System.out.println(count);
+        }
+}
 
 //Самое длинное слово
 //Дана строка s, содержащая буквы латинского алфавита в верхнем и нижнем регистре, а также пробелы. Найдите самое длинное слово в строке s, выведите это слово и его длину. Если таких слов несколько, выведите первое из них.
 //Словом считается последовательность непробельных символов.
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.*;
 
+public class Main
+{
+  static String max(String par)
+  {
+    String[]words=par.split(" ");
+    String resstring="";
+    for(String word: words)
+    {
+      if(word.length()>resstring.length())
+        resstring=word;
+    }
+    return(resstring);
+  }
+ 
+  static public void main(String args[])
+  {
+    Scanner in = new Scanner(System.in);
+		String str = in.nextLine();
+		char[] s = str.toCharArray();
+    System.out.println(max(str));
+    System.out.println(max(str).length());
+  }
+}
 
 //Является ли слово палиндромом?
 //По данной строке s определите, является ли она палиндромом (то есть, можно ли прочесть ее наоборот, как, например, слово "топот").
+import java.util.*;
+import java.io.*;
+ 
+public class Main
+{
+	public static void main(String[] args){
+    Scanner console = new Scanner (System.in);
+    String n = console.next(); 
+    Printpalindrome(n);
+}
 
+public static void Printpalindrome(String n){
+    String reverse = "";
+    for ( int i = n.length() - 1; i >= 0; i-- ) {
+        reverse = reverse + n.charAt(i);
+    }
+    if (n.equals(reverse))
+        System.out.println("yes"); 
+    else
+        System.out.println("no"); 
+}
+}
 
 //Две одинаковые буквы
 //Дана строка S. Известно, что она содержит ровно две одинаковые буквы. Найдите эти буквы. Гарантируется, что повторяются буквы только одного вида.
-
+import java.util.*;
+    public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+		String str = in.nextLine();
+		char[] s = str.toCharArray();
+        char[] arr = str.toCharArray();
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == arr[i + 1]) {
+                System.out.println(arr[i]);
+                break;
+            }
+        }
+    }
+}
 
 
 //Капитан Флинт
@@ -39,7 +140,29 @@
 
 //Шифр Юлия
 //Юлий Цезарь использовал свой способ шифрования текста. Каждая буква заменялась на следующую по алфавиту через K позиций по кругу. Необходимо по заданной шифровке определить исходный текст.
-
+import java.util.*;
+import java.io.*;
+ 
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+		String str = in.nextLine();
+		char[] s = str.toCharArray();
+		int ABC_SIZE = 26; 
+		int k = in.nextInt();
+		String str1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		char[] s1 = str1.toCharArray();
+		for(int i = 0; i < s.length; i++){
+			int find = s[i] - 'A';
+			if(find - k < 0) s[i] = s1[ABC_SIZE - (k - find)];
+			else s[i] = s1[find-k];
+ 
+		}
+	System.out.println(s);
+	}
+}
 
 //Удали пробелы
 //Дана строка s, требуется преобразовать все идущие подряд пробелы в один.
