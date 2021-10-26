@@ -44,7 +44,46 @@ public class Main {
 
 //Мастика
 //В магазине продается мастика в ящиках по a кг (тип 1), b кг (тип 2) и c кг (тип 3). Как купить ровно N кг мастики, не вскрывая ящики? Сколькими способами можно это сделать?
+import java.util.*;
 
+public class Main 
+{
+    public static void main(String args[]){   
+
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        int n = in.nextInt();
+        int s = 0;
+        for (int na = 0; na <= n / a; na++) {
+
+       for (int nb = 0; nb <= (n - a * na) / b; nb++) {
+
+           int kk = n - na * a - nb * b;
+
+           if (kk >= 0 && kk % c == 0) s++;        
+
+       }
+
+   }
+   System.out.print(s+"\n");
+   
+    for (int na = 0; na <= n / a; na++) {
+
+       for (int nb = 0; nb <= (n - a * na) / b; nb++) {
+
+           int ll = n - na * a - nb * b;
+
+           if (ll >= 0 && ll % c == 0)
+
+               System.out.print( na + " " + nb + " " + ll / c + "\n");
+
+       }
+
+   }       
+    } 
+}
 
 
 //Количество элементов, равных максимуму
