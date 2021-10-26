@@ -82,8 +82,23 @@ public class Tema_1_2_1 {
 //4, 7, 10, 13, 16, ,,,
 //и вывести получившийся массив на экран.
 //Не будет считаться верным решение, в котором элементы последовательности просто выводятся на экран, не попадая в массив.
-
-
+import java.util.Scanner;
+ 
+public class Main {
+public static void main(String[] args) throws Exception {
+    Scanner s = new Scanner(System.in);
+     int sum = 4;
+    int num = s.nextInt();
+    int a[] = new int[num];
+    for (int i = 0; i < num; i++) {
+        a[i]=sum;
+        sum+=3;
+    }
+    for (int i = 0; i <num; i++) {
+        System.out.print(a[i] + " ");
+    }
+}
+}
 
 //Развернуть массив в обратную сторону ("задом наперед").
 //Последний элемент должен находится на месте начального и наоборот.
