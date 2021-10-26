@@ -95,9 +95,38 @@ public class Tema_1_2_1 {
 
 //Самый популярный
 //Дана последовательность целых чисел из N элементов. Найдите значение самого часто повторяющегося элемента массива.
-
-
-
+import java.util.Scanner;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a;
+        a = in.nextInt();
+        int arr[][] = new int[2][a];
+        for(int i = 0; i < a; i++){
+            arr[0][i] = in.nextInt();
+        }
+        for(int i = 0; i < a; i++){
+            int counter = 1;
+            for(int j = i; j < a; j++){
+                if(arr[0][i] == arr[0][j] && i != j){
+                    counter++;
+                }
+            }
+            arr[1][i] = counter;
+        }
+        int max = -1;
+        for(int i = 0; i < a; i++){
+            if(arr[1][i] > max) max = arr[1][i];
+        }
+        for(int i = 0; i < a; i++){
+            if(arr[1][i] == max) {
+                System.out.println(arr[0][i]);
+                break;
+            }
+        }
+    }
+}
 
 //Отрицательные - налево!
 //Дан массив целых чисел из N элементов. Переместить в начало массива все отрицательные значения массива, не меняя их относительного положения. То есть, каждый отрицательный элемент должен оказаться в том же порядке относительно всех отрицательных элементов, а каждый неотрицательный элемент - в том же порядке относительно всех неотрицательных элементов.
