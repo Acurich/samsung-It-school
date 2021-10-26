@@ -89,9 +89,21 @@ public class Tema_1_2_1 {
 //Последний элемент должен находится на месте начального и наоборот.
 //Не разрешается использовать дополнительный массив.
 //Не будет считаться верным решение, которое просто выводит на экран массив в обратном порядке, не меняя в памяти значение элементов массива.
-
-
-
+import java.util.Scanner;
+ 
+public class Main {
+public static void main(String[] args) throws Exception {
+    Scanner s = new Scanner(System.in);
+    int num = s.nextInt();
+    int a[] = new int[num];
+    for (int i = 0; i < num; i++) {
+        a[i] = s.nextInt();
+    }
+    for (int i = num - 1; i >= 0; i--) {
+        System.out.print(a[i] + " ");
+    }
+}
+}
 
 //Самый популярный
 //Дана последовательность целых чисел из N элементов. Найдите значение самого часто повторяющегося элемента массива.
