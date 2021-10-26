@@ -19,7 +19,23 @@ public class NumberDigits {
 //быть членом класса NumberDigits;
 //иметь спецификатор доступа public;
 //быть статическим.
+import java.util.Scanner;
+public class NumberDigits {
+        public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b= in.nextInt();
+        System.out.println(SumOfSeven(a ,b));
+    }
+    
+        public static int SumOfSeven(int a, int b){
+           int sum = 0;
+            for(int i = a; i<=b; i++){
+                    if (i%7==0&&i<100&&i>9){sum += i%10+i/10;}}
+            return sum;
 
+    }
+}
 
 
 //Разработайте метод SumOfThirteen, который который принимает в качестве аргумента целое неотрицательное число n(0≤n≤104) и возвращает количество целых неотрицательных чисел, меньших n, сумма цифр которых кратна 13.
@@ -27,9 +43,37 @@ public class NumberDigits {
 //быть членом класса NumberDigits;
 //иметь спецификатор доступа public;
 //быть статическим
+import java.util.Scanner;
+public class NumberDigits {
+        public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
 
+        System.out.println(SumOfThirteen(a));
+    }
 
+        public static int SumOfThirteen(int a){
+            int sum = 0;
+            for(int i = 0;  i<a; i++){
+                int i_2 = i;
+                int N = 0;
+                int summa_zifr = 0;
+                while (i_2!=0){
+                    i_2 = i_2/10;
+                    N++;
+                }
+                int g = 1;
+                for(int j = 1; j<=N; j++){
+                    summa_zifr += (i/g)%10;
+                    g*=10;
+                }
+                if (summa_zifr % 13 == 0){sum++;}
+            }
+            return sum;
 
+    }
+    
+}
 
 //Разработайте метод BinFraction, который который принимает в качестве аргументов вещественное число x(0<x≤20) и целое положительное число n(0<n≤10) и выводит на экран n первых двоичных разрядов дробной части числа x.
 //Метод BinFraction должен:
