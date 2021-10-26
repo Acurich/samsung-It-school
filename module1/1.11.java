@@ -89,15 +89,75 @@ public class Main {
 
 //Таблица умножения
 //Даны два числа n и m. Создайте двумерный массив размером nm, заполните его таблицей умножения, т.е. чтобы элемент, находящийся в i строке и j столбце имел значение i∗j. Нумерация строк и столбцов начинается с нуля. При этом нельзя использовать вложенные циклы, все заполнение массива должно производиться одним циклом.
+import java.util.Random;
+import java.util.Scanner;
 
+public class Main {
+	public static Scanner in = new Scanner(System.in); 
+	
+	public static void main (String[] argc)
+	{
+		int n;
+		int m;
+		n = in.nextInt();
+		m = in.nextInt();
+		int t = 0;
+		int arr[][] = new int[n][m];
+		for (int i = 0; i < n; i++)
+			for (int k = 0; k < m; k++)
+				arr[i][k] = i * k;
+		
+		for (int i = 0; i < n; i++)
+		{
+			for (int k = 0; k < m; k++)
+				System.out.printf("%4d", arr[i][k]);
+			System.out.println();
+		}
+	}
+}
 
 
 
 //Заполнение змейкой
 //Даны числа n и m. Создайте массив A[n][m] и заполните его змейкой (см. пример).
+import java.util.Random;
+import java.util.Scanner;
 
-
-
+public class Main {
+	public static Scanner in = new Scanner(System.in); 
+	
+	public static void main (String[] argc)
+	{
+		int n;
+		int m;
+		n = in.nextInt();
+		m = in.nextInt();
+		int t = 0;
+		int c = 0;
+		int arr[][] = new int[n][m];
+		for (int i = 0; i < n; i++)
+			for (int k = 0; k < m; k++)
+			{
+				if (i % 2 == 0)
+				{
+					arr[i][k] = c;
+					c++;
+				}
+				else
+				{
+					arr[i][m - k - 1] = c;
+					c++;
+				}
+			}
+		
+		for (int i = 0; i < n; i++)
+		{
+			for (int k = 0; k < m; k++)
+				System.out.printf("%3d",arr[i][k]);
+			System.out.println();
+		}
+	}	
+}
 
 //Заполнение спиралью
 //Дано число n. Создайте массив A[2*n+1][2*n+1] и заполните его по спирали, начиная с числа 0 в центральной клетке A[n][n]. Спираль выходит вверх, далее закручивается против часовой стрелки.
