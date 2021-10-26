@@ -98,5 +98,27 @@ public class NumberDigits {
 //быть членом класса MyArrays;
 //иметь спецификатор доступа public;
 //быть статическим.
-
+public class MyArrays {
+    public static void minToBegin(int [] arr)
+    {
+        int min=arr[0],imin=0;
+        int i_f,i_t;
+        for (int i=1; i<arr.length; i++)
+        {
+            if (arr[i]<min)
+            {
+                imin=i;
+                min=arr[i];
+            }
+        }
+        i_t=imin;
+        i_f=i_t-1;
+        while(i_f>=0)
+        {
+            arr[i_t--]=arr[i_f--];
+        }
+        arr[0]=min;     
+    }
+    
+}
 
