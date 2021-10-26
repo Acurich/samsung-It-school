@@ -16,3 +16,14 @@
 //быть членом класса MyMath;
 //иметь спецификатор доступа public;
 //быть статическим.
+public class MyMath {
+public static int min(int a, int b)
+{
+if(a <= b) return a;
+return b;
+}
+public static int min(int a, int b, int c, int d)
+{
+return min(min(a, b), min(c, d));
+}  
+}
