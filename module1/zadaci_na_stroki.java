@@ -154,7 +154,33 @@ import java.util.*;
 
 //Является ли строка палиндромом?
 //Дана строка s, состоящая из строчных латинских букв и пробелов. Проверьте, является ли она палиндромом без учета пробелов (например, Лёша на полке клопа нашёл).
+import java.util.Locale;
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner console = new Scanner (System.in);
+        char[] arr = console.nextLine().toCharArray();
+        boolean result = true;
+        int len = arr.length;
+        for (int i = 0; i < len / 2; i++) {
+            if (arr[i] == ' ' && arr[len - 1 - i] == ' ') {
+            }
+            else if (arr[i] == ' ') {
+                len++;
+            }
+            else if (arr[len - 1 - i] == ' ') {
+                i--;
+                len--;
+            }
+            else if (arr[i] != arr[len - 1 - i]) {
+                result = false;
+                break;
+            }
+        }
+        System.out.println(result ? "yes" : "no");
+    }
+}
 
 //Шифр Юлия
 //Юлий Цезарь использовал свой способ шифрования текста. Каждая буква заменялась на следующую по алфавиту через K позиций по кругу. Необходимо по заданной шифровке определить исходный текст.
