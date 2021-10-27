@@ -80,8 +80,25 @@ public class NumberDigits {
 //быть членом класса NumberDigits;
 //иметь спецификатор доступа public;
 //быть статическим.
+import static java.lang.Math.floor;
 
+import java.util.Scanner;
 
+public class NumberDigits {
+    public static void BinFraction(double x, int n){
+        for(int i = 0; i < n; i++){
+            x *= 2;
+            System.out.print((int) floor(x));
+            x-= floor(x);
+        }
+    }
+    public static void main(String args[]){
+        Scanner In = new Scanner(System.in);
+        double x = In.nextDouble();
+        int n = In.nextInt();
+        BinFraction(x, n);
+    }
+}
 
 //Разработайте метод avgOf4Digit, который который принимает в качестве аргумента массив целых чисел и возвращает вещественное число типа double - среднее арифметическое элементов массива, которые являются четырехзначными натуральными числами. Элементы массива по абсолютной величине не превосходят 109. Количество элементов массива не превосходит 104.
 //Если в массиве нет таких чисел, метод должен вернуть число -1.
@@ -89,7 +106,23 @@ public class NumberDigits {
 //быть членом класса MyArrays;
 //иметь спецификатор доступа public;
 //быть статическим.
-
+public class MyArrays {
+        public static double avgOf4Digit(int[] arrayList){
+        double sum = 0;
+        int n = 0;
+        for(int i = 0; i<arrayList.length; i++){
+            if(arrayList[i]/10000==0&&arrayList[i]/1000!=0){
+                sum+=arrayList[i];
+                n++;
+            }
+        }
+        double answer;
+        if(sum == 0){return -1;}
+        else
+        {answer = (sum/n);return answer;}
+    }
+    
+}
 
 
 
