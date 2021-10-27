@@ -161,4 +161,59 @@ public class Main {
 
 //Заполнение спиралью
 //Дано число n. Создайте массив A[2*n+1][2*n+1] и заполните его по спирали, начиная с числа 0 в центральной клетке A[n][n]. Спираль выходит вверх, далее закручивается против часовой стрелки.
+import java.util.Locale;
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Locale currentLocale = Locale.getDefault();
+        Scanner in = new Scanner(System.in).useLocale(Locale.US);
+        int lng = in.nextInt() * 2 + 1;
+        int[][] tbl = new int[lng][lng];
+        int x = lng - 1; 
+        int y = lng - 1; 
+        int sx = 0; 
+        int sy = 0; 
+
+        int ctr = lng * lng - 1;
+
+        while (ctr >= 0) { 
+            for (int i = 0; i < tbl.length; i++) {
+                if(tbl[i][x] == 0) {
+                    tbl[i][x] = ctr--; 
+                }
+            }
+            for (int i = tbl.length - 1; i > 0; i--) {
+                if(tbl[y][i] == 0) {
+                    tbl[y][i] = ctr--;
+                }
+            }
+            for (int i = tbl.length - 1; i > 0; i--) {
+                if(tbl[i][sx] == 0) {
+                    tbl[i][sx] = ctr--;
+                }
+            }
+            for (int i = 0; i < tbl.length; i++) {
+                if (tbl[sy][i] == 0) {
+                    tbl[sy][i] = ctr--;
+                }
+            }
+
+            sx++;sy++;
+            x--;y--;
+        }
+        tbl[(lng-1) / 2][(lng-1) / 2] = 0; 
+        for (int i = 0; i < tbl.length; i++) {
+            for (int j = 0; j < tbl.length; j++) {
+                if(tbl[i][j] < 10) {
+                    System.out.print("  " + tbl[i][j]);
+                } else if(tbl[i][j] < 100) {
+                    System.out.print(" " + tbl[i][j]);
+                } else {
+                    System.out.print(tbl[i][j]);
+                }
+            }
+            System.out.println();
+        }
+    }
+}
