@@ -149,8 +149,38 @@ import java.util.*;
 //Капитан Флинт
 //Капитан Флинт зарыл клад на Острове сокровищ. Он оставил описание, как найти клад. Описание состоит из строк вида: "Direction n", где Direction – одно из слов "North", "South", "East", "West" – задает направление движения, а n – количество шагов, которое необходимо пройти в этом направлении.
 //Напишите программу, которая по описанию пути к кладу определяет точные координаты клада, считая, что начало координат находится в начале пути, ось OX направлена на восток, ось OY – на север.
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;
 
-
+public class example03 {
+    public static void main(String[] args) throws IOException
+    {
+        Scanner in = new Scanner(System.in);
+        String temp = "";
+        int x=0, y=0;
+        while(in.hasNext())
+        temp += in.nextLine() + "\r\n";
+        in.close();
+        String substr = "\r\n";
+        Pattern p = Pattern.compile(substr);
+        Matcher m = p.matcher(temp);
+        int counter = 0;
+            while(m.find()) {
+                counter++;
+            }
+        temp = temp.substring(0,temp.length()-2);
+        String[] list = new String [counter];
+        list=temp.split("\r\n", counter);
+        for (int i=0; i<list.length; i++){
+            if (list[i].substring(0 , list[i].indexOf(' ')).equals("North")) y= y + Integer.parseInt(list[i].substring(list[i].indexOf(' ')+1, list[i].length()));
+            if (list[i].substring(0 , list[i].indexOf(' ')).equals("South")) y= y - Integer.parseInt(list[i].substring(list[i].indexOf(' ')+1, list[i].length()));
+            if (list[i].substring(0 , list[i].indexOf(' ')).equals("West")) x= x - Integer.parseInt(list[i].substring(list[i].indexOf(' ')+1, list[i].length()));
+            if (list[i].substring(0 , list[i].indexOf(' ')).equals("East")) x= x + Integer.parseInt(list[i].substring(list[i].indexOf(' ')+1, list[i].length()));
+        }
+        System.out.println(x + " " + y);
+    }
+}
 
 //Является ли строка палиндромом?
 //Дана строка s, состоящая из строчных латинских букв и пробелов. Проверьте, является ли она палиндромом без учета пробелов (например, Лёша на полке клопа нашёл).
