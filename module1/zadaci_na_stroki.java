@@ -210,3 +210,29 @@ public class Main
 
 //Удали пробелы
 //Дана строка s, требуется преобразовать все идущие подряд пробелы в один.
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner console = new Scanner (System.in);
+                char[] arr = console.nextLine().toCharArray();
+        boolean flag = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == ' ') {
+                if (flag) {
+                    continue;
+                }
+                else {
+                    flag = true;
+                }
+            }
+            else {
+                flag = false;
+            }
+            System.out.print(arr[i]);
+        }
+
+        console.close();
+    }
+}
