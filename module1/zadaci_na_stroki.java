@@ -2,7 +2,25 @@
 //102 на informatics
 //Напишите функцию boolean IsDigit(char c) (Java), function IsDigit(c:char):boolean (Pascal), bool IsDigit(unsigned char c) (C/C++), определяющую, является ли данный символ цифрой или нет.
 //Естественно, программа должна считывать данные, вызывать эту функцию и выдавать ответ.
+import java.util.Scanner;
 
+public class Main{
+    static boolean IsDijit(char c) {
+        if(c >= '0' && c <= '9')
+            return true;
+        else
+            return false;
+    }
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        char c = in.next().charAt(0);
+        if(IsDijit(c))
+            System.out.print("yes");
+        else
+            System.out.print("no");
+        in.close();
+    }
+}
 
 //Изменить регистр символа
 //Дан символ C из таблицы кодировки ASCII. Измените регистр символа, если он был латинской буквой: сделайте его заглавным, если он был строчной буквой и наоборот. Для этого напишите отдельную функцию, меняющую регистр символа.
