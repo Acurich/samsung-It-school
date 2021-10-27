@@ -1,6 +1,20 @@
 //Двоичная запись
 //Дано целое неотрицательное число N. Выведите цифры в двоичной записи числа N в обратном порядке.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        StringBuilder result = new StringBuilder();
 
+        while(a > 0) {
+            if(a%2 == 0) result.append("0");
+            else result.append("1");
+            a = a/2;
+        }
+        System.out.println(result);
+    }
+}
 
 //Потерянная карточка
 //Для настольной игры используются карточки с номерами от 1 до N. Одна карточка потерялась. Найдите ее.
