@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Task {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+        System.out.println(Integer.toBinaryString(num));
+        System.out.println(Integer.toOctalString(num));
+        System.out.println(Integer.toHexString(num));
+        Byte bt = Byte.valueOf((byte)num);
+        System.out.println(bt == num ? "YES" : "NO");
+        Short sh = Short.valueOf((short)num);
+        System.out.println(sh == num ? "YES" : "NO");
+    }
+}
