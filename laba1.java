@@ -49,6 +49,6 @@ class Diameter{
             spisok.set(i, spisok.get(i)+" "+(Math.round(Math.random()*14+9))*3);
         }
 
-        System.out.println(spisok);
+        Main.PrintInfo(spisok);
     }
 }
